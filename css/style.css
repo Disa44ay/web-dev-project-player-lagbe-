@@ -4,7 +4,52 @@
     version: 1.0
 */
 
+/*CSS for all */
+*{
+    margin 0 0;
+    padding 0 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
 .container{
     border: 1px solid blue;
     width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+}
+.img-responsive{
+    width: 80%;
+}
+.test-responsive{
+    width: 100%;
+}
+.text-right{
+    text-align: right;
+}
+.clearFix{
+    clear: both;
+    float: none;
+}
+a{
+    color: #ff7979;
+    text-decoration: none;
+}
+a:hover{
+    color: #eb4d4b
+}
+
+/* CSS for navbar section */
+.logo{  
+    width: 10%;
+    float: left;
+}
+.menu{
+    line-height: 70px;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 2%;
+    font width: bold;
 }
