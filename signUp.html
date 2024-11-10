@@ -3,18 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Lagbe Website</title>
-
-    <!-- Linking CSS file starts here -->
+    <title>Sign Up</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Linking CSS file ends here -->
 </head>
 
 <body>
-    <!-- Nav bar section starts here -->
-    <section class="nav_bar">
+
+     <!-- Nav bar section (reused from main page) -->
+     <section class="nav_bar">
         <div class="container">
             <div class="logo">
                 <a href="index.html">
@@ -42,7 +39,30 @@
             <div class="clearFix"></div>
         </div>
     </section>
-    <!-- Nav bar section ends here -->
+
+    <!--nav bar section ends here-->
+
+    <!--sign up section starts here-->
+    <section class="sign-up-section">
+        <div class="container">
+            <h2>Sign Up</h2>
+            <p>Register to join Player Lagbe and start recruiting players!</p>
+
+            <form action="#" method="POST">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                
+                <button type="submit" class="button">Sign Up</button>
+            </form>
+        </div>
+    </section>
+    <!--sign up section ends here-->
 </body>
 
 </html>
