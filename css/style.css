@@ -19,6 +19,7 @@
 }
 .img-responsive{
     width: 100%;
+    height: auto;
 }
 .test-responsive{
     width: 100%;
@@ -26,15 +27,19 @@
 .text-right{
     text-align:right;
 }
+.text-center{
+    text-align: center;
+}
 .clearFix{
     clear: both;
     float: none;
 }
 a{
-    color: #ff7979;
+    color: #EBEAFF;
     text-decoration: none;
 }
 a:hover{
+    background-color: ;
     color: #eb4d4b
 }
 .button{
@@ -46,6 +51,8 @@ a:hover{
 /* CSS for navbar section */
 .logo{  
     width: 10%;
+    max-width: 150px;
+    min-width: 80px;
     float: left;
 }
 .menu{
@@ -69,4 +76,18 @@ a:hover{
 body, html {
     width: 100%;
     overflow-x: hidden;
+}
+
+/*CSS for footer */
+.footer{
+    line-height: 30px;
+    background-color: #9EDF9C ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3% 0;
+}
+.contact{
+    display:contents;
+    justify-content: center;
 }
