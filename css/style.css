@@ -11,6 +11,7 @@
     font-family:Arial, Helvetica, sans-serif;
     box-sizing: border-box; /* Makes layout responsive */
 }
+
 .container{
     border: 1px solid blue;
     width: 90%;
@@ -35,7 +36,7 @@
     float: none;
 }
 a{
-    color: #EBEAFF;
+    color: #d2dae2;
     text-decoration: none;
 }
 a:hover{
@@ -47,6 +48,10 @@ a:hover{
     Border: none;
     font-size: 1rem;
 }
+
+
+
+
 
 /* CSS for navbar section */
 .logo{  
@@ -78,16 +83,98 @@ body, html {
     overflow-x: hidden;
 }
 
-/*CSS for footer */
-.footer{
-    line-height: 30px;
-    background-color: #9EDF9C ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 3% 0;
+
+
+
+/*CSS for shop section */
+.New-items{
+    padding: 2% 0;
+
 }
-.contact{
-    display:contents;
-    justify-content: center;
+.item{
+    border: 1px solid black;
+    width: 28%;
+    overflow:auto;
+    margin: 2%;
+}
+
+
+
+/*CSS for footer */
+/* General Footer Styling */
+.footer {
+    line-height: 30px;
+    background-color: #222; /* Dark background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Light text color */
+    padding: 3% 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Footer Links Layout */
+.footer-links {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+}
+
+/* Social Section */
+.social {
+    text-align: left;
+    flex: 1;
+}
+
+/* Contact Section */
+.contact {
+    text-align: right;
+    flex: 1;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Link Specific Styles */
+a.social-link,
+a.contact-link,
+a.footer-bottom-link {
+    color: #3498db; /* Default blue link color */
+    text-decoration: none;
+}
+
+a.social-link:hover {
+    color:  #e74c3c;
+}
+
+a.contact-link:hover {
+    color: #e74c3c;
+}
+
+a.footer-bottom-link:hover {
+    color:  #e74c3c;
+}
+
+
+
+
+
+/* CSS for Responsive Design(to make it suitable for any screen) */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social,
+    .contact {
+        text-align: center; 
+        margin-bottom: 10px;
+    }
 }
