@@ -1,0 +1,150 @@
+/* 
+    Author: Abdullah sayeed;
+    Theme: player recruitment site;
+    version: 1.0
+*/
+
+* {
+    margin: 0 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    padding: 1%;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clearFix {
+    float: none;
+    clear: both;
+}
+
+.tbl-full {
+    width: 100%;
+}
+
+table tr th {
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td {
+    padding: 1%;
+}
+
+.btn-primary {
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    padding: 1%;
+    font-weight: bold;
+    ;
+}
+
+.btn-primary:hover {
+    background-color: #16a085;
+}
+
+.btn-secondary-up {
+    background-color: white;
+    color: #3498db;
+    padding: 1%;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-secondary-up:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-secondary-del {
+    background-color: #e74c3c;
+    color: white;
+    padding: 1%;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-secondary-del:hover {
+    background-color: #c0392b;
+}
+
+
+/*Css for menu*/
+.menu {
+    line-height: 25px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid black;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font: bold;
+    color: #e74c3c;
+}
+
+.menu ul li a:hover {
+    color: #c0392b;
+}
+.form-table{
+    width: 30%;
+}
+
+
+
+
+/*css for main content*/
+.main-content {
+    background-color: #bdc3c7;
+    padding: 3% 0;
+}
+
+.col-4 {
+    width: 18%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+
+
+/*CSS for footer*/
+.footer {
+    background-color: #34495e;
+    /* Dark background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.footer a {
+    color: #c7ecee;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer a:hover {
+    color: white;
+}
