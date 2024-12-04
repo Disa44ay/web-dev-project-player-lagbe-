@@ -1,5 +1,4 @@
 <?php include('../config/constants.php'); ?>
-
 <html>
     <head>
             <title>player lagbe website - Home page</title>

@@ -6,6 +6,15 @@
         <h1>Manage admin</h1>
 
         <br><br>
+        <?php
+        if (isset($_SESSION['add'])) {
+            echo $_SESSION['add']; //to show the session message
+            unset($_SESSION['add']); //removing session message
+        }
+        ?>
+
+        <br><br>
+
         <a href="add-admin.php" class="btn-primary">Add Admin</a>
         <br><br>
 
@@ -17,38 +26,51 @@
                 <th>Actions</th>
             </tr>
 
-            <tr>
-                <td>1.</td>
-                <td>Abdullah Sayeed</td>
-                <td>Sayeed</td>
-                <td>
-                    <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn-secondary-del">Delete Admin</a>
+            <?php
+            //query to get all the admin
+            $sql = "SELECT * from admin_info";
+            //execute the query
+            $res = mysqli_query($conn, $sql);
+            
+            //check wheather the query is executed or not
+            if ($res == true) {
 
-                </td>
-            </tr>
+                //count rows to check wheather we have data in database or not
+                $count = mysqli_num_rows($res);
 
-            <tr>
-                <td>2.</td>
-                <td>Trisha Barua</td>
-                <td>Trisha</td>
-                <td>
-                    <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn-secondary-del">Delete Admin</a>
+                $sn = 1;//to fix the issue of serial number being shown without seqence if data is delted
 
-                </td>
-            </tr>
 
-            <tr>
-                <td>3.</td>
-                <td>Tahamed Esaiet</td>
-                <td>Tahamed</td>
-                <td>
-                    <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn-secondary-del">Delete Admin</a>
+                //check the number of rows
+                if ($count > 0) {
 
-                </td>
-            </tr>
+                    while ($rows = mysqli_fetch_assoc($res)) {
+                        //get individual data
+                        $id = $rows['AID'];
+                        $full_name = $rows['FULL_NAME'];
+                        $username = $rows['USERNAME'];
+
+                        //display the value in our table
+            ?>
+
+                        <tr>
+                            <td>  <?php echo $sn++; ?></td>
+                            <td> <?php echo $full_name; ?></td>
+                            <td>  <?php echo $username; ?></td>
+                            <td>
+                                <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
+                                <a href="#" class="btn-secondary-del">Delete Admin</a>
+
+                            </td>
+                        </tr>
+
+            <?php
+
+                    }
+                }
+            }
+            ?>
+
 
         </table>
 

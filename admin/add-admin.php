@@ -57,16 +57,38 @@
             PASSWORD = '$password'
         ";
 
-        //echo $sql;
 
-        $conn = mysqli_connect('localhost', 'root', '', 'idiot_sandwich');
+        //echo $sql;
+       /* $conn = mysqli_connect('localhost', 'root', '', 'idiot_sandwich');
+
+        //connection establish
         if(!$conn){
             die("ERROR ". mysqli_error());
         }else{
             echo "connection established";
+        }*/
+        
+        //to save the data in database
+        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+        //confirming if the data is inserted or not
+        if($res == true){
+            //echo "data inserted";
+            //create a variable to show session message
+            $_SESSION['add'] = "Admin added successfully";
+
+            //redirect page to add-admin page
+            header("location:".HOMEURL."admin/manage-admin.php");
+
         }
+        else{
+            //echo "failed to insert";
 
-        $res = mysqli_query($conn, $sql) or die(mysqli_error());
+             //create a variable to show session message
+             $_SESSION['add'] = "Failed to add admin";
 
+            //redirect page to add-admin page
+            header("location:".HOMEURL."admin/manage-admin.php");
+        }
     }
 ?>
