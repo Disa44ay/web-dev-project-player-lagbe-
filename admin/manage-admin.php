@@ -1,15 +1,47 @@
 <?php include('header.php'); ?>
 
-<!--main content section satrts here -->
+<!--main content section starts here -->
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage admin</h1>
+        <h1>Manage Admin</h1>
 
         <br><br>
+
         <?php
+        // Display all session messages if set
         if (isset($_SESSION['add'])) {
-            echo $_SESSION['add']; //to show the session message
-            unset($_SESSION['add']); //removing session message
+            echo $_SESSION['add'];
+            unset($_SESSION['add']);
+        }
+
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']);
+        }
+
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update'];
+            unset($_SESSION['update']);
+        }
+
+        if (isset($_SESSION['user_not_found'])) { // Fixed key name to match Update Password logic
+            echo $_SESSION['user_not_found'];
+            unset($_SESSION['user_not_found']);
+        }
+
+        if (isset($_SESSION['password_mismatch'])) { // Fixed key name to match Update Password logic
+            echo $_SESSION['password_mismatch'];
+            unset($_SESSION['password_mismatch']);
+        }
+
+        if (isset($_SESSION['password_changed'])) { // New: Display success message
+            echo $_SESSION['password_changed'];
+            unset($_SESSION['password_changed']);
+        }
+
+        if (isset($_SESSION['password_not_changed'])) { // New: Display failure message
+            echo $_SESSION['password_not_changed'];
+            unset($_SESSION['password_not_changed']);
         }
         ?>
 
@@ -27,57 +59,39 @@
             </tr>
 
             <?php
-            //query to get all the admin
-            $sql = "SELECT * from admin_info";
-            //execute the query
+            $sql = "SELECT * FROM admin_info";
             $res = mysqli_query($conn, $sql);
-            
-            //check wheather the query is executed or not
+
             if ($res == true) {
-
-                //count rows to check wheather we have data in database or not
                 $count = mysqli_num_rows($res);
+                $sn = 1;
 
-                $sn = 1;//to fix the issue of serial number being shown without seqence if data is delted
-
-
-                //check the number of rows
                 if ($count > 0) {
-
                     while ($rows = mysqli_fetch_assoc($res)) {
-                        //get individual data
                         $id = $rows['AID'];
                         $full_name = $rows['FULL_NAME'];
                         $username = $rows['USERNAME'];
-
-                        //display the value in our table
             ?>
-
                         <tr>
-                            <td>  <?php echo $sn++; ?></td>
-                            <td> <?php echo $full_name; ?></td>
-                            <td>  <?php echo $username; ?></td>
+                            <td><?php echo $sn++; ?></td>
+                            <td><?php echo $full_name; ?></td>
+                            <td><?php echo $username; ?></td>
                             <td>
-                                <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                                <a href="#" class="btn-secondary-del">Delete Admin</a>
-
+                                <a href="<?php echo HOMEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
+                                <a href="<?php echo HOMEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary-up">Update</a>
+                                <a href="<?php echo HOMEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-secondary-del">Delete Admin</a>
                             </td>
                         </tr>
-
             <?php
-
                     }
                 }
             }
             ?>
-
-
         </table>
-
 
         <div class="clearFix"></div>
     </div>
 </div>
-<!--main content section satrts here -->
+<!--main content section ends here -->
 
 <?php include('footer.php'); ?>

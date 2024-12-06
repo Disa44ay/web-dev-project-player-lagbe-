@@ -43,23 +43,22 @@
 
 
 <?php
-    if(isset($_POST['submit']))
-    {
-        //button clicked
-        //echo "button clicked";
-        $full_name = $_POST["Full_Name"];
-        $username = $_POST["username"];
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+if (isset($_POST['submit'])) {
+    //button clicked
+    //echo "button clicked";
+    $full_name = $_POST["Full_Name"];
+    $username = $_POST["username"];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO admin_info SET
+    $sql = "INSERT INTO admin_info SET
             FULL_NAME = '$full_name',
             USERNAME = '$username',
             PASSWORD = '$password'
         ";
 
 
-        //echo $sql;
-       /* $conn = mysqli_connect('localhost', 'root', '', 'idiot_sandwich');
+    //echo $sql;
+    /* $conn = mysqli_connect('localhost', 'root', '', 'idiot_sandwich');
 
         //connection establish
         if(!$conn){
@@ -67,28 +66,26 @@
         }else{
             echo "connection established";
         }*/
-        
-        //to save the data in database
-        $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-        //confirming if the data is inserted or not
-        if($res == true){
-            //echo "data inserted";
-            //create a variable to show session message
-            $_SESSION['add'] = "Admin added successfully";
+    //to save the data in database
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-            //redirect page to add-admin page
-            header("location:".HOMEURL."admin/manage-admin.php");
+    //confirming if the data is inserted or not
+    if ($res == true) {
+        //echo "data inserted";
+        //create a variable to show session message
+        $_SESSION['add'] = "Admin added successfully";
 
-        }
-        else{
-            //echo "failed to insert";
+        //redirect page to add-admin page
+        header("location:" . HOMEURL . "admin/manage-admin.php");
+    } else {
+        //echo "failed to insert";
 
-             //create a variable to show session message
-             $_SESSION['add'] = "Failed to add admin";
+        //create a variable to show session message
+        $_SESSION['add'] = "Failed to add admin";
 
-            //redirect page to add-admin page
-            header("location:".HOMEURL."admin/manage-admin.php");
-        }
+        //redirect page to add-admin page
+        header("location:" . HOMEURL . "admin/manage-admin.php");
     }
+}
 ?>

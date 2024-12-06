@@ -76,6 +76,19 @@ table tr td {
 .btn-secondary-del:hover {
     background-color: #c0392b;
 }
+.success{
+    color: black;
+}
+.error{
+    color: #c0392b;
+}
+.form-table{
+    width: 30%;
+}
+
+
+
+
 
 
 /*Css for menu*/
@@ -105,9 +118,6 @@ table tr td {
 
 .menu ul li a:hover {
     color: #c0392b;
-}
-.form-table{
-    width: 30%;
 }
 
 

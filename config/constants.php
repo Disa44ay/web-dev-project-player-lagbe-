@@ -16,10 +16,11 @@
 
         $conn = mysqli_connect(LOCALHOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-        //connection establish
+        /*connection establish
         if(!$conn){
             die("ERROR ". mysqli_error());
         }else{
             echo "connection established";
         }
+         */
 ?>
