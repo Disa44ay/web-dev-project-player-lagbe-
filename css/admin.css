@@ -76,11 +76,13 @@ table tr td {
 .btn-secondary-del:hover {
     background-color: #c0392b;
 }
-.success{
-    color: black;
+.success {
+    color: green;
+    font-weight: bold;
 }
-.error{
-    color: #c0392b;
+.error {
+    color: red;
+    font-weight: bold;
 }
 .form-table{
     width: 30%;
@@ -157,4 +159,12 @@ table tr td {
 
 .footer a:hover {
     color: white;
+}
+
+/*login form */
+.login{
+    border: 1px solid black;
+    width: 25%;
+    margin: 15% auto;
+    padding: 2%;
 }

@@ -38,7 +38,6 @@
 
 <?php
 if (isset($_POST['submit'])) {
-    include('../config/constants.php');
 
     $id = mysqli_real_escape_string($conn, $_POST['id']);
     $current_password = mysqli_real_escape_string($conn, $_POST['current_password']);

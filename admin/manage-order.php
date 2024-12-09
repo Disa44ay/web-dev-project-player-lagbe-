@@ -9,43 +9,72 @@
         <table class="tbl-full">
             <tr>
                 <th>Serial Number</th>
-                <th>Full Name</th>
-                <th>Username</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Featured</th>
+                <th>Active</th>
                 <th>Actions</th>
             </tr>
+            <?php
+            //sql query to get all the item details
+            $sql = "SELECT * FROM shop_items_info";
 
-            <tr>
-                <td>1.</td>
-                <td>Abdullah Sayeed</td>
-                <td>Sayeed</td>
-                <td>
-                    <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn-secondary-del">Delete Admin</a>
+            //execute the query
+            $res = mysqli_query($conn, $sql);
 
-                </td>
-            </tr>
+            //count rows to check whether ww have items in db or not
+            $count = mysqli_num_rows($res);
 
-            <tr>
-                <td>2.</td>
-                <td>Trisha Barua</td>
-                <td>Trisha</td>
-                <td>
-                    <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn-secondary-del">Delete Admin</a>
+            //create serial number variable
+            $sn = 1;
 
-                </td>
-            </tr>
+            if ($count > 0) {
+                //get the items form database and display
+                while ($row = mysqli_fetch_assoc($res)) {
+                    //get the value from individual columns
+                    $id = $row['IID'];
+                    $title = $row['NAME'];
+                    $price = $row['PRICE'];
+                    $image_name = $row['IMAGE_NAME'];
+                    $featured = $row['FEATURED'];
+                    $active = $row['ACTIVE'];
+            ?>
 
-            <tr>
-                <td>3.</td>
-                <td>Tahamed Esaiet</td>
-                <td>Tahamed</td>
-                <td>
-                    <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn-secondary-del">Delete Admin</a>
+                    <tr>
+                        <td><?php echo $sn++; ?></td>
+                        <td><?php echo $title; ?></td>
+                        <td><?php echo $price; ?></td>
+                        <td>
+                            <?php 
+                            //check whether we ahve a image or not
+                            if($image_name == ""){
+                                echo "<div class = 'error'>image not added.</div>";
+                            }else{
+                                //we have image disp[lay the image
+                                ?>
+                                <img src="<?php echo HOMEURL; ?>images/items/<?php echo $image_name; ?>" width = "100px">
 
-                </td>
-            </tr>
+                                <?php
+                            }
+                        ?>
+                        </td>
+                        <td><?php echo $featured; ?></td>
+                        <td><?php echo $active; ?></td>
+                        <td>
+                            <a href="#" class="btn-secondary-up">Update</a>&nbsp;&nbsp;&nbsp;
+                            <a href="#" class="btn-secondary-del">Delete item</a>
+
+                        </td>
+                    </tr>
+
+            <?php
+
+                }
+            } else {
+                echo "<tr><td colspan='7' class='error'>Item not inserted.</td></tr>";
+            }
+            ?>
 
         </table>
     </div>

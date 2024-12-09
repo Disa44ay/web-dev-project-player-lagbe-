@@ -6,8 +6,15 @@
             <h1>Manage admin</h1>
 
             <br><br>
-            <a href="#" class="btn-primary">Add product</a>
-            <br><br>
+            <a href="<?php echo HOMEURL; ?>admin/add-items.php" class="btn-primary">Add product</a>
+            <br><br><br>
+
+            <?php 
+                if (isset($_SESSION['add'])) {
+                    echo $_SESSION['add'];
+                    unset($_SESSION['add']);
+                }
+            ?>
 
             <table class="tbl-full">
                 <tr>

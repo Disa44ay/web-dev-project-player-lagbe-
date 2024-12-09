@@ -4,7 +4,7 @@
                 <p class = "text-center">2024 All right reserved.This website is developed by - <a href="#">team idiot sandwich</a> </p>
             </div>
         </div>
-         <!--footyer section ends here -->
+         <!--footer section ends here -->
         
     </body>
 </html>

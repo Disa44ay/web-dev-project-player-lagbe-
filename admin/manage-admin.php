@@ -43,6 +43,10 @@
             echo $_SESSION['password_not_changed'];
             unset($_SESSION['password_not_changed']);
         }
+        if (isset($_SESSION['login'])) {
+            echo $_SESSION['login'];
+            unset($_SESSION['login']);
+        }
         ?>
 
         <br><br>
